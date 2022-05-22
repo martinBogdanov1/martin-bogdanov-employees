@@ -12,7 +12,7 @@ function App() {
     const inputFile = e.target.files[0];
     const fileType = inputFile?.type;
 
-    if (fileType != "text/csv") {
+    if (fileType !== "text/csv") {
       setError("Please enter CSV file.");
       e.target.value = null;
       return;
