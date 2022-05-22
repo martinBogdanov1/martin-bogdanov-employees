@@ -32,16 +32,40 @@ function App() {
 
 
   return (
-    <div className="App">
-      <div className='fileInput'>
-        <input onChange={onChangeFileHandler} type='file' name='file' />
+    <div className="container text-center">
+      <div>
+        <label className='btn btn-primary' htmlFor="inputTag">
+          Select CSV
+          <input onChange={onChangeFileHandler} id="inputTag" type="file" />
+        </label>
       </div>
       {
-        error ?
+        error
+          ?
           <div className='error'>
             {error}
           </div>
-          : data
+          :
+          <table className="table">
+            <thead className="thead-dark">
+              <tr>
+                <th scope="col">EmployeeID #1</th>
+                <th scope="col">EmployeeID #2</th>
+                <th scope="col">ProjectID</th>
+                <th scope="col">Total Days</th>
+              </tr>
+            </thead>
+            <tbody>
+              {pairDetails.map(x => {
+                return <tr key={x.firstEmployeeId + x.projectId}>
+                  <td>{x.firstEmployeeId}</td>
+                  <td>{x.secondEmployeeId}</td>
+                  <td>{x.projectId}</td>
+                  <td>{x.daysWorked}</td>
+                </tr>
+              })}
+            </tbody>
+          </table>
       }
     </div>
   );

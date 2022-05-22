@@ -1,16 +1,16 @@
-.App {
-  text-align: center;
-}
-
-input {
-  margin: 50px;
-  font-size: 30px;
-  text-align: right;
-  max-width: 100%;
-  padding-left: 150px;
+table, th, td {
+  border: 1px solid;
 }
 
 .error {
-  height: 30px;
   font-size: 20px;
+}
+
+input {
+  display: none;
+}
+
+label {
+  cursor: pointer;
+  margin-top: 20px;
 }
