@@ -5,9 +5,10 @@ import { usePapaParse } from 'react-papaparse';
 function App() {
   const { readString } = usePapaParse();
   const [error, setError] = useState("");
-  const [data, setData] = useState([])
+  const [pairDetails, setPairDetails] = useState([])
 
   const onChangeFileHandler = (e) => {
+    setPairDetails([]);
     setError("");
     const inputFile = e.target.files[0];
     const fileType = inputFile?.type;
